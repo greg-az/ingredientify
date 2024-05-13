@@ -36,9 +36,16 @@ export default function Home({ posts }) {
 
   return (
     <div className={styles.container}>
-      <header className={styles.header}>
-        <div className={styles.logo}>Ingredient Science Blog</div>
-        <p className={styles.tagline}>Explore the science behind everyday ingredients.</p>
+      <nav className={styles.nav}>
+        <Link href="/" className={styles.navLogo}>Ingredient Science Blog</Link>
+        <div className={styles.navLinks}>
+          <Link href="/about">About</Link>
+          <Link href="/contact">Contact</Link>
+        </div>
+      </nav>
+      <header className={styles.hero}>
+        <h1 className={styles.heroTitle}>Explore the Science Behind Everyday Ingredients</h1>
+        <p className={styles.heroTagline}>Dive deep into the benefits and science of natural products.</p>
         <input
           type="text"
           placeholder="Search ingredients..."
@@ -47,15 +54,11 @@ export default function Home({ posts }) {
           className={styles.searchInput}
         />
       </header>
-      <nav className={styles.nav}>
-        <Link href="/">Home</Link>
-        <Link href="/about">About</Link>
-      </nav>
       <main className={styles.mainContent}>
         <ul className={styles.postList}>
           {filteredPosts.map(({ slug, title }) => (
             <li key={slug}>
-              <Link href={`/${slug}`} className={styles.link}>
+              <Link href={`/${slug}`} className={styles.postLink}>
                 {title}
               </Link>
             </li>
@@ -63,7 +66,7 @@ export default function Home({ posts }) {
         </ul>
       </main>
       <footer className={styles.footer}>
-        © 2024 Ingredient Science Blog. All rights reserved.
+        <div>© 2024 Ingredient Science Blog. All rights reserved.</div>
         <div>Follow us on [Social Media Links]</div>
       </footer>
     </div>

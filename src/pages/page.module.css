@@ -1,62 +1,49 @@
-/* page.module.css */
-.container {
-  max-width: 1200px;
-  margin: auto;
-  padding: 20px;
-  background: #fff;
-}
 
-.logo {
+/* Header styles */
+.header {
+  background-color: #0056b3;
+  color: #ffffff;
+  padding: 20px 0;
+  text-align: center;
   font-size: 24px;
   font-weight: bold;
 }
 
-.header {
-  background: #0077cc;
-  padding: 20px;
-  color: #fff;
-  text-align: center;
-}
-
-@keyframes gradientBG {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
+/* Navigation styles */
 .nav {
   display: flex;
-  justify-content: center;
-  background: #003366;
-  padding: 10px 0;
+  justify-content: space-between;
+  padding: 0 20px;
+  background-color: #003366;
+  align-items: center;
 }
 
 .nav a {
-  color: #fff;
+  color: #ffffff;
   text-decoration: none;
-  margin: 0 15px;
-  font-size: 18px;
+  padding: 10px 15px;
+  font-size: 16px;
 }
 
-.searchInput {
-  display: block;
-  width: 100%;
-  padding: 8px;
-  margin-top: 20px;
-  box-sizing: border-box;
-  border: none;
-  border-radius: 4px;
-}
-
+/* Main content area */
 .mainContent {
-  padding: 20px 0;
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.postList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .postList li {
-  list-style: none;
-  margin: 10px 0;
-  padding: 10px;
-  border-bottom: 1px solid #eee;
+  background: #ffffff;
+  margin-bottom: 10px;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .postList li a {
@@ -65,92 +52,42 @@
   text-decoration: none;
 }
 
+/* Footer styles */
 .footer {
   text-align: center;
   padding: 20px;
   background: #003366;
-  color: #fff;
+  color: #ffffff;
+  font-size: 14px;
+}
+
+/* Search input styling */
+.searchInput {
+  padding: 10px;
+  margin: 20px auto;
+  display: block;
+  width: calc(100% - 40px);
+  border-radius: 20px;
+  border: none;
   font-size: 16px;
+}
+
+/* Utility classes */
+.logo {
+  font-size: 24px;
 }
 
 .tagline {
   font-size: 16px;
+  color: #bbb;
   margin-top: 5px;
 }
 
-@keyframes gradientBG {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-
-.affiliateLink {
-  display: block;
-  margin: 20px auto;
-  text-align: center;
-  color: #c60;
-  font-weight: bold;
-  text-decoration: none;
-}
-
-.postContent {
-  padding: 20px;
-  line-height: 1.6;
-}
-
-.backToHome {
-  color: #0077cc;
-  text-decoration: none;
-  display: block;
-  margin-bottom: 20px;
-}
-
-.postContainer {
-  max-width: 800px;
-  margin: 20px auto;
-  padding: 20px;
-  background: #fff;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  font-family: 'Arial', sans-serif;
-}
-
-.postTitle {
-  color: #003366;
-  text-align: center;
-}
-
-.affiliateLink {
-  display: block;
-  margin: 20px 0;
-  text-align: center;
-  color: #0077cc;
-  font-weight: bold;
-}
-
-.postContent {
-  text-align: left;
-  line-height: 1.6;
-}
-
-.backToHome {
-  display: block;
-  margin-bottom: 10px;
-  color: #0077cc;
-  text-decoration: none;
-}
-
+/* Table styles */
 .table {
   width: 100%;
-  margin: 20px 0;
   border-collapse: collapse;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  margin: 20px 0;
 }
 
 .th, .td {
@@ -161,86 +98,30 @@
 
 .th {
   background-color: #f9f9f9;
-  color: #333;
-  font-weight: bold;
 }
 
-
-.td:hover {
-  background-color: #f4f4f9;
-}
-
-.h1, .h2, .h3, .h4, .h5, .h6 { /* Adjust as per your class assignments */
-  color: #003366;
-  margin-top: 24px;
-  margin-bottom: 16px;
-}
-
-.h1 {
-  font-size: 28px;
-  border-bottom: 2px solid #eee;
-  padding-bottom: 10px;
-}
-
-.h2 {
-  font-size: 24px;
-}
-
-.p {
-  line-height: 1.6;
-  margin: 10px 0;
-  font-size: 16px;
-  color: #666;
-}
-
-.strong {
-  font-weight: bold;
-}
-
-.em {
-  font-style: italic;
-}
-
-@media screen and (max-width: 600px) {
-  .table {
-    display: block;
-    overflow-x: auto;
-  }
-}
-
-/* Responsive Design Adjustments */
+/* Responsive adjustments */
 @media (max-width: 700px) {
-  .container {
-    margin: 10px;
-    padding: 10px;
-  }
-
-  .header {
-    padding: 10px;
-    font-size: 20px;
-  }
-
-  .postContent {
-    padding: 15px;
-  }
-
   .nav {
-    display: block;
-    padding: 10px;
+    flex-direction: column;
+    align-items: center;
   }
 
   .nav a {
-    display: block;
-    margin: 10px 0;
+    margin-bottom: 10px;
+  }
+
+  .searchInput {
+    width: calc(100% - 20px);
   }
 }
 
 @media (min-width: 701px) and (max-width: 1024px) {
-  .container {
+  .header, .footer {
     padding: 15px;
   }
 
-  .header {
-    font-size: 22px;
+  .mainContent {
+    padding: 15px;
   }
 }

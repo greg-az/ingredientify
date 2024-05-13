@@ -81,12 +81,14 @@
   margin: 0;
 }
 
+/* Global styles */
 body, html {
   margin: 0;
   padding: 0;
   font-family: 'Montserrat', sans-serif;
-  background: #f4f4f9;
+  background-color: #f7f7f7;
   color: #333;
+  line-height: 1.6;
 }
 
 body {
