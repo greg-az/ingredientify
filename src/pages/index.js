@@ -4,8 +4,8 @@ import matter from 'gray-matter';
 import Link from 'next/link';
 import styles from './page.module.css';
 import { useState, useEffect } from 'react';
-import Carousel from 'react-bootstrap/Carousel'; // You'll need to install react-bootstrap
-import 'bootstrap/dist/css/bootstrap.min.css'; // Ensure Bootstrap CSS is included
+import Carousel from 'react-bootstrap/Carousel';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export async function getStaticProps() {
   const directory = path.join(process.cwd(), 'src/posts');
@@ -80,7 +80,7 @@ export default function Home({ posts }) {
             <Carousel.Item key={post.slug}>
               <img
                 className="d-block w-100"
-                src={`thumbnails/${post.slug}.jpg`} // Placeholder for thumbnails
+                src={`thumbnails/${post.slug}.jpg`}
                 alt={post.title}
               />
               <Carousel.Caption>

@@ -1,11 +1,17 @@
+/* Base container styles */
+.container {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+/* Header styles */
 .header {
-  background-color: var(--primary-color);
-  color: var(--footer-text-color);
-  text-align: center;
-  padding: 20px 0;
-  font-size: 24px;
-  font-weight: bold;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  background-color: #333;
+  color: white;
+  padding: 10px;
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -25,10 +31,9 @@
 }
 
 .navLinks a {
-  color: var(--footer-text-color);
-  padding: 8px 12px;
-  font-size: 18px;
-  font-weight: 700;
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
   transition: background-color 0.3s, color 0.3s;
 }
 
@@ -38,96 +43,63 @@
   border-radius: 8px;
 }
 
-
-.nav {
-  display: flex;
-  justify-content: space-between;
-  background-color: var(--secondary-color);
-  padding: 10px 20px;
-  align-items: center;
-}
-
-.nav a {
-  color: var(--footer-text-color);
-  padding: 10px 15px;
-  font-size: 16px;
-  transition: color 0.3s;
-}
-
-.nav a:hover {
-  color: var(--link-hover-color);
-}
-
+/* Main content styles */
 .mainContent {
   padding: 20px;
   max-width: var(--max-width);
   margin: auto;
 }
 
-
 .postPreview {
-  background: #fff;
+  background-color: #fff;
   margin-bottom: 10px;
   padding: 20px;
   border-radius: var(--border-radius);
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.postList {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+  box-shadow: var(--box-shadow);
 }
 
 .postLink {
   color: var(--accent-color);
   font-size: 18px;
+  text-decoration: none;
 }
 
-.postLink:hover {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+.postLink:hover, .postPreview:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-
-.postList li {
-  background: #fff;
-  margin-bottom: 10px;
-  padding: 20px;
-  border-radius: var(--border-radius);
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.postList li a {
-  color: var(--accent-color);
-  font-size: 18px;
-}
-
-.postList li:hover {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.footer {
-  text-align: center;
-  padding: 20px;
-  background: var(--footer-background-color);
-  color: var(--footer-text-color);
-  font-size: 14px;
+/* Search styles */
+.searchSection {
+  margin-right: 20px;
 }
 
 .searchInput {
   padding: 10px;
-  margin: 20px auto;
-  display:block;
+  display: block;
   width: calc(100% - 40px);
   border-radius: 20px;
   border: none;
   font-size: 16px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
 }
 
-/* Adjustments for medium and smaller screens */
+/* Footer styles */
+.footer {
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.socialMedia a {
+  color: #d1d1d1;
+  margin: 0 10px;
+}
+
+/* Responsive adjustments */
 @media (max-width: 700px) {
-  .header {
+  .header, .navLinks a {
     padding: 20px 10px;
   }
 

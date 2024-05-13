@@ -9,6 +9,7 @@
   --border-radius: 12px;
   --background-color: #f4f4f9; /* Light gray background */
   --text-color: #333; /* Dark gray text */
+  --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 body, html {
@@ -25,7 +26,6 @@ a {
   text-decoration: none;
 }
 
-/* globals.css */
 a:link { /* unvisited link */
   color: var(--primary-color);
 }
