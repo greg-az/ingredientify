@@ -91,12 +91,12 @@ export default function PostPage({ frontMatter, content }) {
         <title>{frontMatter.title} - Ingredientify</title>
         <meta name="description" content={frontMatter.excerpt || 'Read more about this fascinating post.'} />
       </Head>
-      <div className={styles.postContainer}>
+      <div className={styles.postContainer} onClick={handlePageClick}>
       <Link href="/" className={`${styles.backToHome} no-redirect`}>← Back to Home</Link>
         <h1 className={styles.postTitle}>{frontMatter.title}</h1>
         <div className={styles.postContent} dangerouslySetInnerHTML={{ __html: content }} />
         {frontMatter.affiliate_link && (
-          <a href={frontMatter.affiliate_link} target="_blank" rel="noopener noreferrer" className={styles.affiliateLink}>
+          <a href={frontMatter.affiliate_link} target="_blank" className={`${styles.affiliateLink} no-redirect`}>
             Buy on Amazon
           </a>
         )}

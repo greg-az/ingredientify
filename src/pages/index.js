@@ -40,8 +40,6 @@ export default function Home({ posts }) {
           <Link href="/" passHref><div className={styles.logo}>Ingredientify</div></Link>
           <nav className={styles.navLinks}>
             <Link href="/about" passHref><div>About</div></Link>
-            <Link href="/categories" passHref><div>Categories</div></Link>
-            <Link href="/contact" passHref><div>Contact</div></Link>
           </nav>
         </header>
         <main className={styles.grid}>
