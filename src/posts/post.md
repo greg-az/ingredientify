@@ -1,5 +1,5 @@
 ---
-title: "Benefits of Probiotics"
+title: "Benefits of Probiotics (More Than You Think!!!)"
 date: "2024-05-13"
 affiliate_link: "https://amzn.to/3JZF8pe"
 ---

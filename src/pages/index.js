@@ -1,10 +1,9 @@
-// src/pages/index.js
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import Link from 'next/link';
 import styles from './page.module.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export async function getStaticProps() {
   const directory = path.join(process.cwd(), 'src/posts');
@@ -16,7 +15,8 @@ export async function getStaticProps() {
     return {
       slug: filename.replace('.md', ''),
       title: data.title,
-      date: data.date
+      date: data.date,
+      excerpt: data.excerpt || '',
     };
   });
 
@@ -34,18 +34,22 @@ export default function Home({ posts }) {
     post.title.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
+  useEffect(() => {
+    document.title = "Ingredient Science Blog - Explore the Science Behind Everyday Ingredients";
+  }, []);
+
   return (
     <div className={styles.container}>
-      <nav className={styles.nav}>
-        <Link href="/" className={styles.navLogo}>Ingredient Science Blog</Link>
-        <div className={styles.navLinks}>
-          <Link href="/about">About</Link>
-          <Link href="/contact">Contact</Link>
-        </div>
-      </nav>
-      <header className={styles.hero}>
-        <h1 className={styles.heroTitle}>Explore the Science Behind Everyday Ingredients</h1>
-        <p className={styles.heroTagline}>Dive deep into the benefits and science of natural products.</p>
+      <header className={styles.header}>
+        <Link href="/" legacyBehavior>
+          <a className={styles.logo}>Ingredient Science Blog</a>
+        </Link>
+        <nav className={styles.navLinks}>
+          <Link href="/about" legacyBehavior><a>About</a></Link>
+          <Link href="/contact" legacyBehavior><a>Contact</a></Link>
+        </nav>
+      </header>
+      <div className={styles.searchSection}>
         <input
           type="text"
           placeholder="Search ingredients..."
@@ -53,21 +57,25 @@ export default function Home({ posts }) {
           onChange={(e) => setSearchQuery(e.target.value)}
           className={styles.searchInput}
         />
-      </header>
+      </div>
       <main className={styles.mainContent}>
-        <ul className={styles.postList}>
-          {filteredPosts.map(({ slug, title }) => (
-            <li key={slug}>
-              <Link href={`/${slug}`} className={styles.postLink}>
-                {title}
-              </Link>
-            </li>
-          ))}
-        </ul>
+        {filteredPosts.map(({ slug, title, excerpt }) => (
+          <article key={slug} className={styles.postPreview}>
+            <Link href={`/${slug}`} legacyBehavior>
+              <a className={styles.postLink}>
+                <h2>{title}</h2>
+                <p>{excerpt}</p>
+                <span className={styles.readMore}>Read More →</span>
+              </a>
+            </Link>
+          </article>
+        ))}
       </main>
       <footer className={styles.footer}>
         <div>© 2024 Ingredient Science Blog. All rights reserved.</div>
-        <div>Follow us on [Social Media Links]</div>
+        <div className={styles.socialMedia}>
+          Follow us on <a href="#">Facebook</a>, <a href="#">Twitter</a>, and <a href="#">Instagram</a>
+        </div>
       </footer>
     </div>
   );
