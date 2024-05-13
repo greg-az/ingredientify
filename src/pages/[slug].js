@@ -89,25 +89,18 @@ export default function PostPage({ frontMatter, content }) {
     <>
       <Head>
         <title>{frontMatter.title} - Ingredientify</title>
-        <meta name="description" content={frontMatter.excerpt || 'Read more about this fascinating ingredient.'} />
-        <meta property="og:title" content={`${frontMatter.title} - Ingredientify`} />
-        <meta property="og:description" content={frontMatter.excerpt} />
-        <meta property="og:type" content="article" />
-        <meta property="og:url" content={`https://www.ingredientify.com/${frontMatter.slug}`} />
-        <meta property="og:image" content={`/thumbnails/${frontMatter.slug}.jpg`} />
-        <meta name="twitter:card" content="summary" />
+        <meta name="description" content={frontMatter.excerpt || 'Read more about this fascinating post.'} />
       </Head>
-      <div className={styles.postContainer} onClick={handlePageClick}>
-        <Link href="/" className={`${styles.backToHome} no-redirect`}>← Back to Home</Link>
-        <h1 className={`${styles.postTitle} no-redirect`}>{frontMatter.title}</h1>
+      <div className={styles.postContainer}>
+      <Link href="/" className={`${styles.backToHome} no-redirect`}>← Back to Home</Link>
+        <h1 className={styles.postTitle}>{frontMatter.title}</h1>
+        <div className={styles.postContent} dangerouslySetInnerHTML={{ __html: content }} />
         {frontMatter.affiliate_link && (
-          <a href={frontMatter.affiliate_link} target="_blank" rel="noopener noreferrer" className={`${styles.affiliateLink} no-redirect`}>
+          <a href={frontMatter.affiliate_link} target="_blank" rel="noopener noreferrer" className={styles.affiliateLink}>
             Buy on Amazon
           </a>
         )}
-        <YouTubeEmbed videoId="B-x7YaS_vE4" />
-        <div className={styles.postContent} dangerouslySetInnerHTML={createMarkup(content)} />
       </div>
     </>
   );
-}
+};

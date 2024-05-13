@@ -1,7 +1,7 @@
 ---
 title: "Exploring the Benefits of Wild Yam Cream"
 date: "2024-05-13"
-excerpt: "Discover the intriguing benefits of wild yam cream for skincare and hormonal balance, backed by research."
+excerpt: "Discover the intriguing benefits of wild yam cream for skincare and hormonal balance, backed by research..."
 affiliate_link: "https://amzn.to/4bfVW75"
 ---
 

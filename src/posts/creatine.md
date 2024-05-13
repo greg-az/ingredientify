@@ -4,6 +4,7 @@ date: "2024-05-13"
 categories: [Supplements, Health]
 tags: [creatine, fitness, cognitive enhancement, health]
 affiliate_link: https://amzn.to/4dBueTU
+excerpt: "Creatine monohydrate is a popular supplement recognized for its numerous health and performance benefits. It enhances physical performance by increasing..."
 ---
 
 # Intro

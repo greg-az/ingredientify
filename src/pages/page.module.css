@@ -1,127 +1,124 @@
-/* Base container styles */
+/* styles/page.module.css */
 .container {
-  width: 100%;
-  padding: 0;
-  margin: 0;
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
 }
 
-/* Header styles */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.postPreview {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+}
+
+.postContainer {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+  background-color: #fff;
+  color: #333;
+  line-height: 1.6;
+}
+
+.postImage {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.postContent {
+  font-size: 1.2rem;
+}
+
+.postTitle {
+  font-size: 20px;
+  margin: 0;
+  color: #333;
+}
+
+.postTitle {
+  font-size: 20px;
+  margin: 0;
+  color: #333;
+}
+
+.postExcerpt {
+  font-size: 16px;
+  color: #666;
+  margin-top: 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Number of lines you want to display */
+  -webkit-box-orient: vertical;
+}
+
+.readMore {
+  font-size: 14px;
+  color: #0056b3;
+  margin-top: 10px;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 .header {
+  background-color: #f8f9fa;
+  padding: 20px;
   display: flex;
   justify-content: space-between;
-  background-color: #333;
-  color: white;
-  padding: 10px;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+  align-items: center;
 }
 
 .navLinks {
   display: flex;
-  justify-content: center;
-  background-color: transparent;
-  padding: 0;
-  gap: 20px;
+  gap: 15px;
 }
 
 .logo {
-  font-size: 28px;
-  font-weight: 700;
+  font-weight: bold;
+  font-size: 24px;
 }
 
-.navLinks a {
-  color: white;
+.navLinks a, .logo {
+  color: #007bff;
   text-decoration: none;
-  margin-left: 20px;
-  transition: background-color 0.3s, color 0.3s;
 }
 
 .navLinks a:hover {
-  background-color: var(--link-hover-color);
-  color: var(--secondary-color);
-  border-radius: 8px;
+  text-decoration: underline;
 }
 
-/* Main content styles */
-.mainContent {
-  padding: 20px;
-  max-width: var(--max-width);
-  margin: auto;
-}
 
-.postPreview {
-  background-color: #fff;
-  margin-bottom: 10px;
-  padding: 20px;
-  border-radius: var(--border-radius);
-  box-shadow: var(--box-shadow);
-}
-
-.postLink {
-  color: var(--accent-color);
-  font-size: 18px;
+.backToHome {
+  display: block;
+  margin-bottom: 20px;
+  color: #666;
   text-decoration: none;
 }
 
-.postLink:hover, .postPreview:hover {
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+.backToHome:hover {
+  text-decoration: underline;
 }
 
-/* Search styles */
-.searchSection {
-  margin-right: 20px;
-}
-
-.searchInput {
-  padding: 10px;
+.affiliateLink {
   display: block;
-  width: calc(100% - 40px);
-  border-radius: 20px;
-  border: none;
-  font-size: 16px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  margin: 20px auto;
-}
-
-/* Footer styles */
-.footer {
-  background-color: #333;
+  background-color: #0070f3;
   color: white;
-  padding: 20px;
+  padding: 10px 15px;
   text-align: center;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  text-decoration: none;
 }
 
-.socialMedia a {
-  color: #d1d1d1;
-  margin: 0 10px;
-}
-
-/* Responsive adjustments */
-@media (max-width: 700px) {
-  .header, .navLinks a {
-    padding: 20px 10px;
-  }
-
-  .navLinks {
-    flex-direction: column;
-    padding: 10px 0;
-  }
-
-  .navLinks a {
-    display: block;
-    text-align: center;
-    width: 100%;
-    padding: 12px 0; /* More touch-friendly padding */
-  }
-}
-
-@media (min-width: 701px) and (max-width: 1024px) {
-  .header {
-    padding: 25px 20px;
-  }
-
-  .navLinks {
-    justify-content: space-around;
-  }
+.affiliateLink:hover {
+  background-color: #0056b3;
 }

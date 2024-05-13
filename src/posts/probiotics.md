@@ -2,6 +2,7 @@
 title: "Benefits of Probiotics (More Than You Think!!!)"
 date: "2024-05-13"
 affiliate_link: "https://amzn.to/3JZF8pe"
+excerpt: "The health benefits of Lactobacillus and Bifidobacterium species, which include various strains like Lactobacillus casei, Lactobacillus acidophilus..."
 ---
 
 # Benefits of Probiotics

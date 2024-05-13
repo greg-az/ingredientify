@@ -2,6 +2,7 @@
 title: "The Impact of Collagen Peptide Supplementation on Health"
 date: "2024-05-13"
 affiliate_link: "https://amzn.to/4bhcfAI"
+excerpt: "Collagen peptide supplementation offers a variety of benefits for human health. For instance, it supports skin health by improving hydration..."
 ---
 
 ## Introduction

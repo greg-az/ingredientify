@@ -56,3 +56,9 @@ th {
     --link-hover-color: #ffc400; /* Adjusted for better visibility in dark mode */
   }
 }
+
+img {
+  max-width: 100%;
+  height: auto;
+  margin: 20px 0;
+}
