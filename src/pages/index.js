@@ -36,30 +36,36 @@ export default function Home({ posts }) {
 
   return (
     <div className={styles.container}>
-      <div className={styles.header}>Ingredient Science Blog</div>
+      <header className={styles.header}>
+        <div className={styles.logo}>Ingredient Science Blog</div>
+        <p className={styles.tagline}>Explore the science behind everyday ingredients.</p>
+        <input
+          type="text"
+          placeholder="Search ingredients..."
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+          className={styles.searchInput}
+        />
+      </header>
       <nav className={styles.nav}>
         <Link href="/">Home</Link>
         <Link href="/about">About</Link>
       </nav>
-      <input
-        type="text"
-        placeholder="Search ingredients..."
-        value={searchQuery}
-        onChange={(e) => setSearchQuery(e.target.value)}
-        className={styles.searchInput}
-      />
-      <ul className={styles.postList}>
-        {filteredPosts.map(({ slug, title }) => (
-          <li key={slug}>
-            <Link href={`/${slug}`} className={styles.link}>
-              {title}
-            </Link>
-          </li>
-        ))}
-      </ul>
-      <div className={styles.footer}>
+      <main className={styles.mainContent}>
+        <ul className={styles.postList}>
+          {filteredPosts.map(({ slug, title }) => (
+            <li key={slug}>
+              <Link href={`/${slug}`} className={styles.link}>
+                {title}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </main>
+      <footer className={styles.footer}>
         © 2024 Ingredient Science Blog. All rights reserved.
-      </div>
+        <div>Follow us on [Social Media Links]</div>
+      </footer>
     </div>
   );
 }
