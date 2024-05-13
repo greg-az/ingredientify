@@ -5,7 +5,39 @@
   padding: 20px 0;
   font-size: 24px;
   font-weight: bold;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
+
+.navLinks {
+  display: flex;
+  justify-content: center;
+  background-color: transparent;
+  padding: 0;
+  gap: 20px;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.navLinks a {
+  color: var(--footer-text-color);
+  padding: 8px 12px;
+  font-size: 18px;
+  font-weight: 700;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.navLinks a:hover {
+  background-color: var(--link-hover-color);
+  color: var(--secondary-color);
+  border-radius: 8px;
+}
+
 
 .nav {
   display: flex;
@@ -32,11 +64,30 @@
   margin: auto;
 }
 
+
+.postPreview {
+  background: #fff;
+  margin-bottom: 10px;
+  padding: 20px;
+  border-radius: var(--border-radius);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
 .postList {
   list-style: none;
   margin: 0;
   padding: 0;
 }
+
+.postLink {
+  color: var(--accent-color);
+  font-size: 18px;
+}
+
+.postLink:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
 
 .postList li {
   background: #fff;
@@ -66,7 +117,7 @@
 .searchInput {
   padding: 10px;
   margin: 20px auto;
-  display: block;
+  display:block;
   width: calc(100% - 40px);
   border-radius: 20px;
   border: none;
@@ -74,28 +125,31 @@
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
+/* Adjustments for medium and smaller screens */
 @media (max-width: 700px) {
-  .nav {
-    flex-direction: column;
+  .header {
+    padding: 20px 10px;
   }
 
-  .nav a {
+  .navLinks {
+    flex-direction: column;
+    padding: 10px 0;
+  }
+
+  .navLinks a {
     display: block;
     text-align: center;
     width: 100%;
-  }
-
-  .searchInput {
-    width: calc(100% - 20px);
+    padding: 12px 0; /* More touch-friendly padding */
   }
 }
 
 @media (min-width: 701px) and (max-width: 1024px) {
-  .header, .footer {
-    padding: 15px;
+  .header {
+    padding: 25px 20px;
   }
 
-  .mainContent {
-    padding: 15px;
+  .navLinks {
+    justify-content: space-around;
   }
 }

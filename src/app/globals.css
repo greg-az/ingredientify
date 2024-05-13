@@ -21,8 +21,17 @@ body, html {
 }
 
 a {
-  color: inherit;
+  color: var(--accent-color); /* Ensures links are visibly different */
   text-decoration: none;
+}
+
+/* globals.css */
+a:link { /* unvisited link */
+  color: var(--primary-color);
+}
+
+a:visited { /* visited link */
+  color: var(--accent-color);
 }
 
 table {

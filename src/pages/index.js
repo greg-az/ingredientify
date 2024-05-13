@@ -4,6 +4,8 @@ import matter from 'gray-matter';
 import Link from 'next/link';
 import styles from './page.module.css';
 import { useState, useEffect } from 'react';
+import Carousel from 'react-bootstrap/Carousel'; // You'll need to install react-bootstrap
+import 'bootstrap/dist/css/bootstrap.min.css'; // Ensure Bootstrap CSS is included
 
 export async function getStaticProps() {
   const directory = path.join(process.cwd(), 'src/posts');
@@ -40,24 +42,25 @@ export default function Home({ posts }) {
 
   return (
     <div className={styles.container}>
-      <header className={styles.header}>
+      <header className={`${styles.header} ${styles.sticky}`}>
         <Link href="/" legacyBehavior>
           <a className={styles.logo}>Ingredient Science Blog</a>
         </Link>
         <nav className={styles.navLinks}>
           <Link href="/about" legacyBehavior><a>About</a></Link>
+          <Link href="/categories" legacyBehavior><a>Categories</a></Link>
           <Link href="/contact" legacyBehavior><a>Contact</a></Link>
         </nav>
+        <div className={styles.searchSection}>
+          <input
+            type="text"
+            placeholder="Search ingredients..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            className={styles.searchInput}
+          />
+        </div>
       </header>
-      <div className={styles.searchSection}>
-        <input
-          type="text"
-          placeholder="Search ingredients..."
-          value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
-          className={styles.searchInput}
-        />
-      </div>
       <main className={styles.mainContent}>
         {filteredPosts.map(({ slug, title, excerpt }) => (
           <article key={slug} className={styles.postPreview}>
@@ -72,6 +75,21 @@ export default function Home({ posts }) {
         ))}
       </main>
       <footer className={styles.footer}>
+        <Carousel interval={3000} pause={false}>
+          {posts.map(post => (
+            <Carousel.Item key={post.slug}>
+              <img
+                className="d-block w-100"
+                src={`thumbnails/${post.slug}.jpg`} // Placeholder for thumbnails
+                alt={post.title}
+              />
+              <Carousel.Caption>
+                <h3>{post.title}</h3>
+                <p>{post.excerpt}</p>
+              </Carousel.Caption>
+            </Carousel.Item>
+          ))}
+        </Carousel>
         <div>© 2024 Ingredient Science Blog. All rights reserved.</div>
         <div className={styles.socialMedia}>
           Follow us on <a href="#">Facebook</a>, <a href="#">Twitter</a>, and <a href="#">Instagram</a>
