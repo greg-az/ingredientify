@@ -3,6 +3,7 @@ title: "The Impact of Magnesium Glycinate on Health"
 date: "2024-05-13"
 affiliate_link: "https://amzn.to/4bchO3u"
 excerpt: "Discover the profound impact of magnesium glycinate, a highly bioavailable form of magnesium that boosts overall health without competing with..."
+thumbnail: "/magnesium.webp"
 ---
 # Magnesium Glycinate: Unlocking Better Health and Wellbeing
 
@@ -16,8 +17,8 @@ Magnesium is a powerhouse mineral involved in over 300 enzymatic reactions in th
 
 ### Health Benefits of Magnesium Glycinate
 
-- **Pain Relief:** Clinically proven to alleviate chronic back pain and enhance quality of life by acting as an NMDA receptor antagonist ([Lamontagne et al., 2012](https://typeset.io/papers/magnesium-in-pain-management-4g3qrv95)).
-- **Preventive Health:** Linked to reduced hospitalization rates during pregnancy and fewer migraine attacks ([Veronese et al., 2020](https://typeset.io/papers/magnesium-and-hospitalization-9k3jrwv)).
+- **Pain Relief:** Clinically proven to alleviate chronic back pain and enhance quality of life by acting as an NMDA receptor antagonist ([Lamontagne et al., 2012].
+- **Preventive Health:** Linked to reduced hospitalization rates during pregnancy and fewer migraine attacks ([Veronese et al., 2020]).
 - **Chronic Disease Prevention:** Plays a role in preventing osteoporosis, diabetes, and cardiovascular diseases by modulating cellular processes and nutrient metabolism.
 
 ## Essential Research Highlights
