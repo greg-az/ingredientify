@@ -10,6 +10,18 @@ import html from 'remark-html';
 import gfm from 'remark-gfm'; // Import the plugin
 import Head from 'next/head';
 
+const YouTubeEmbed = ({ videoId }) => (
+  <iframe
+    width="560"
+    height="315"
+    src={`https://www.youtube.com/embed/${videoId}`}
+    title="YouTube video player"
+    frameBorder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowFullScreen
+  ></iframe>
+);
+
 const markdownToHtml = async (markdown) => {
   const result = await remark()
     .use(html)
@@ -93,6 +105,7 @@ export default function PostPage({ frontMatter, content }) {
             Buy on Amazon
           </a>
         )}
+        <YouTubeEmbed videoId="B-x7YaS_vE4" />
         <div className={styles.postContent} dangerouslySetInnerHTML={createMarkup(content)} />
       </div>
     </>
