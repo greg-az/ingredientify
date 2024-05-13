@@ -8,6 +8,7 @@ import { useRouter } from 'next/router';
 import { remark } from 'remark';
 import html from 'remark-html';
 import gfm from 'remark-gfm'; // Import the plugin
+import Head from 'next/head';
 
 const markdownToHtml = async (markdown) => {
   const result = await remark()
@@ -60,26 +61,40 @@ export default function PostPage({ frontMatter, content }) {
 
   const createMarkup = (htmlContent) => {
     // You might need a library like 'DOMPurify' for security here
-    return { __html: htmlContent.replace(/<h1>/g, '<h1 class="h1">')
-                                  .replace(/<h2>/g, '<h2 class="h2">')
-                                  .replace(/<p>/g, '<p class="p">')
-                                  .replace(/<strong>/g, '<strong class="strong">')
-                                  .replace(/<em>/g, '<em class="em">')
-                                  .replace(/<table>/g, '<table class="table">')
-                                  .replace(/<th>/g, '<th class="th">')
-                                  .replace(/<td>/g, '<td class="td">') };
+    return {
+      __html: htmlContent.replace(/<h1>/g, '<h1 class="h1">')
+        .replace(/<h2>/g, '<h2 class="h2">')
+        .replace(/<p>/g, '<p class="p">')
+        .replace(/<strong>/g, '<strong class="strong">')
+        .replace(/<em>/g, '<em class="em">')
+        .replace(/<table>/g, '<table class="table">')
+        .replace(/<th>/g, '<th class="th">')
+        .replace(/<td>/g, '<td class="td">')
+    };
   };
 
   return (
-    <div className={styles.postContainer} onClick={handlePageClick}>
-      <Link href="/" className={`${styles.backToHome} no-redirect`}>← Back to Home</Link>
-      <h1 className={`${styles.postTitle} no-redirect`}>{frontMatter.title}</h1>
-      {frontMatter.affiliate_link && (
-        <a href={frontMatter.affiliate_link} target="_blank" rel="noopener noreferrer" className={`${styles.affiliateLink} no-redirect`}>
-          Buy on Amazon
-        </a>
-      )}
-      <div className={styles.postContent} dangerouslySetInnerHTML={createMarkup(content)} />
-    </div>
+    <>
+      <Head>
+        <title>{frontMatter.title} - Ingredientify</title>
+        <meta name="description" content={frontMatter.excerpt || 'Read more about this fascinating ingredient.'} />
+        <meta property="og:title" content={`${frontMatter.title} - Ingredientify`} />
+        <meta property="og:description" content={frontMatter.excerpt} />
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content={`https://www.ingredientify.com/${frontMatter.slug}`} />
+        <meta property="og:image" content={`/thumbnails/${frontMatter.slug}.jpg`} />
+        <meta name="twitter:card" content="summary" />
+      </Head>
+      <div className={styles.postContainer} onClick={handlePageClick}>
+        <Link href="/" className={`${styles.backToHome} no-redirect`}>← Back to Home</Link>
+        <h1 className={`${styles.postTitle} no-redirect`}>{frontMatter.title}</h1>
+        {frontMatter.affiliate_link && (
+          <a href={frontMatter.affiliate_link} target="_blank" rel="noopener noreferrer" className={`${styles.affiliateLink} no-redirect`}>
+            Buy on Amazon
+          </a>
+        )}
+        <div className={styles.postContent} dangerouslySetInnerHTML={createMarkup(content)} />
+      </div>
+    </>
   );
 }
