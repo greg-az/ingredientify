@@ -37,14 +37,14 @@ export default function Home({ posts }) {
   );
 
   useEffect(() => {
-    document.title = "Ingredient Science Blog - Explore the Science Behind Everyday Ingredients";
+    document.title = "Ingredientify - Explore the Science Behind Everyday Ingredients";
   }, []);
 
   return (
     <div className={styles.container}>
       <header className={`${styles.header} ${styles.sticky}`}>
         <Link href="/" legacyBehavior>
-          <a className={styles.logo}>Ingredient Science Blog</a>
+          <a className={styles.logo}>Ingredientify</a>
         </Link>
         <nav className={styles.navLinks}>
           <Link href="/about" legacyBehavior><a>About</a></Link>
@@ -90,7 +90,7 @@ export default function Home({ posts }) {
             </Carousel.Item>
           ))}
         </Carousel>
-        <div>© 2024 Ingredient Science Blog. All rights reserved.</div>
+        <div>© 2024 Ingredientify. All rights reserved.</div>
         <div className={styles.socialMedia}>
           Follow us on <a href="#">Facebook</a>, <a href="#">Twitter</a>, and <a href="#">Instagram</a>
         </div>
