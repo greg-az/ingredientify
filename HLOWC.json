@@ -1,0 +1,22 @@
+{
+  "name": "Hind Leg on Wall Coin",
+  "symbol": "HLOWC",
+  "description": "A community-driven meme coin featuring a terrified chihuahua in a corner.",
+  "image": "https://raw.githubusercontent.com/greg-az/ingredientify/refs/heads/main/DALL%C2%B7E%202024-12-01%2018.40.30%20-%20A%20detailed%20illustration%20of%20a%20terrified%20chihuahua%20backing%20into%20a%20corner%20of%20a%20room.%20Its%20hind%20legs%20are%20elevated%20on%20the%20walls%2C%20as%20if%20trying%20to%20climb%20away%20.webp",
+  "attributes": [],
+  "properties": {
+    "files": [
+      {
+        "uri": "https://raw.githubusercontent.com/greg-az/ingredientify/refs/heads/main/DALL%C2%B7E%202024-12-01%2018.40.30%20-%20A%20detailed%20illustration%20of%20a%20terrified%20chihuahua%20backing%20into%20a%20corner%20of%20a%20room.%20Its%20hind%20legs%20are%20elevated%20on%20the%20walls%2C%20as%20if%20trying%20to%20climb%20away%20.webp",
+        "type": "image/webp"
+      }
+    ],
+    "creators": [
+      {
+        "address": "9wQHv5iWWbYMbrcnrbLAWJ4FyvAcHokeo7Xf542ZcjLo",
+        "share": 100
+      }
+    ]
+  }
+}
+
